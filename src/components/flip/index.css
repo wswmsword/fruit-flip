@@ -1,0 +1,25 @@
+.flip_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #3ee755;
+  border-bottom: 1px solid #3ee755;
+  box-sizing: border-box;
+}
+.col_wrapper {
+  display: flex;
+  /* overflow: hidden; */
+}
+.digit {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overflow_layer {
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 30px;
+  width: 100px;
+  /* overflow: hidden; */
+}
