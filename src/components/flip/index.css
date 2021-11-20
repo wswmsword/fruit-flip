@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #3ee755;
-  border-bottom: 1px solid #3ee755;
+  border-top: 1px solid #21BF73;
+  border-bottom: 1px solid #21BF73;
   box-sizing: border-box;
 }
 .col_wrapper {

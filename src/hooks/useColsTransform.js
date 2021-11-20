@@ -1,27 +1,22 @@
 import { useEffect, useState } from 'react';
-import useAnimationFrame from './useAnimationFrame';
+import useAnimation from './useAnimation';
 
-function useColsTransition(translateY, duration, easeFnManual) {
+function useColsTransition(translateY, duration, delay, easingFn) {
   const [colsTransition, setColsTransition] = useState([]);
-  const [start, setStart] = useState(() => Date.now());
 
-  const easeFn = easeFnManual.fn;
-  const elapsed = Date.now() - start;
-  const percentDistance = easeFn(elapsed / duration);
+  const percentDistance = useAnimation(easingFn, duration, delay, translateY);
+
   useEffect(() => {
-    setStart(Date.now());
-  }, [translateY]);
-  useAnimationFrame(() => {
     let d = translateY.map(colTranslateY => {
       const baseLen = colTranslateY.initTranslateY;
-      const addLen = colTranslateY.activeTranslateY * percentDistance;
-      const allLen = baseLen + addLen
+      const addLen = colTranslateY.offsetTranslateY * percentDistance;
+      const allLen = baseLen + addLen;
       return {
         transform: 'translateY(' + allLen + 'px)',
       };
     });
     setColsTransition(d);
-  }, elapsed < duration);
+  }, [percentDistance, translateY]);
 
   return colsTransition;
 }

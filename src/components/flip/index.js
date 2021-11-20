@@ -11,16 +11,17 @@ export default function Flip(props) {
     width, height,
     data,
     separator,
-    easeFn,
+    easingFn,
+    duration, delay,
   } = props;
   const [shuffledIndexData, setShuffledIndexData] = useState([]);
   const [colsTranslateY, setColsTranslateY] = useState([]);
 
-  const prevIdx = usePrevious(nextIdx)
+  const prevIdx = usePrevious(nextIdx);
 
   useEffect(() => {
-    const startIdx = prevIdx || initIdx
-    const endIdx = nextIdx
+    const startIdx = prevIdx || initIdx;
+    const endIdx = nextIdx;
 
     const shuffledIndexData = data
       .map(colData =>
@@ -30,7 +31,7 @@ export default function Flip(props) {
         }))
       )
       .map(colData => shuffle(colData));
-    setShuffledIndexData(shuffledIndexData)
+    setShuffledIndexData(shuffledIndexData);
 
     const endIdxCommon = endIdx.map(item => item - 1);
     const startIdxCommon = startIdx.map(item => item - 1);
@@ -48,12 +49,12 @@ export default function Flip(props) {
     });
     const colsTranslateY = rollInfo.map(info => ({
       initTranslateY: info.rollStartIdx * height * -1,
-      activeTranslateY: info.rollLength * height * -1,
+      offsetTranslateY: info.rollLength * height * -1,
     }));
     setColsTranslateY(colsTranslateY);
   }, [data, height, initIdx, nextIdx]);
 
-  const colsTransition = useColsTransform(colsTranslateY, 1000, easeFn);
+  const colsTransition = useColsTransform(colsTranslateY, duration, delay, easingFn);
 
   return (
     <div className="flip_wrapper">
