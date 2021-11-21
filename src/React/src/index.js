@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import './index.css'
+import "./index.css";
 
-import { shuffle } from "../../utils/tools";
-import useColsTransform from "../../hooks/useColsTransform";
-import usePrevious from "../../hooks/usePrevious";
+import { shuffle } from "./utils/tools";
+import useColsTransform from "./hooks/useColsTransform";
+import usePrevious from "./hooks/usePrevious";
 
 export default function Flip(props) {
   const {

@@ -1,0 +1,18 @@
+{
+  "name": "flip",
+  "version": "1.0.0",
+  "description": "the flip animation component built using React",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src package.json --out-dir ../../dist/React --copy-files",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wsWmsword",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0"
+  }
+}

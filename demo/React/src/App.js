@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import './App.css';
-import Flip from './components/flip';
+import Flip from 'flip/index'
 import { randomIntInclusive } from './utils/tools';
 import easing from "./utils/easing";
 
