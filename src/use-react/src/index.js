@@ -60,13 +60,13 @@ export default function Flip(props) {
     <div className="flip_wrapper">
     {shuffledIndexData.map((shuffledColData, idx) =>
       <React.Fragment key={idx}>
-        <div className="col_wrapper overflow_layer" style={{width: width + 'px', height: height + 'px'}}>
+        <div className="col_wrapper overflow_layer" style={{width: width + "px", height: height + "px"}}>
           <div className="col_group" style={ colsTransition[idx] }>
           {shuffledColData.map(fruitItem =>
             <div
               className="digit"
               key={ fruitItem.index }
-              style={{width: width + 'px', height: height + 'px'}}>
+              style={{width: width + "px", height: height + "px"}}>
               { fruitItem.value }
             </div>)}
           </div>

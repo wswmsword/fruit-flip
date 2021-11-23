@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import useAnimation from './useAnimation';
+import { useEffect, useState } from "react";
+import useAnimation from "./useAnimation";
 
 function useColsTransition(translateY, duration, delay, easingFn) {
   const [colsTransition, setColsTransition] = useState([]);
@@ -12,7 +12,7 @@ function useColsTransition(translateY, duration, delay, easingFn) {
       const addLen = colTranslateY.offsetTranslateY * percentDistance;
       const allLen = baseLen + addLen;
       return {
-        transform: 'translateY(' + allLen + 'px)',
+        transform: "translateY(" + allLen + "px)",
       };
     });
     setColsTransition(d);

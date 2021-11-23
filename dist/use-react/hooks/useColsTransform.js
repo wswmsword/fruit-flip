@@ -36,7 +36,7 @@ function useColsTransition(translateY, duration, delay, easingFn) {
       var addLen = colTranslateY.offsetTranslateY * percentDistance;
       var allLen = baseLen + addLen;
       return {
-        transform: 'translateY(' + allLen + 'px)'
+        transform: "translateY(" + allLen + "px)"
       };
     });
     setColsTransition(d);
